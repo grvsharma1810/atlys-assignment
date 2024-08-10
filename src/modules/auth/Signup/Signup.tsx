@@ -1,6 +1,7 @@
 import { Button } from "../../../components/Button";
 import { Input } from "../../../components/Input";
 import { LinkButton } from "../../../components/LinkButton";
+import { PasswordInput } from "../../../components/PasswordInput";
 import { AuthWrapper } from "../AuthWrapper";
 
 export const SignUp = ({
@@ -27,9 +28,8 @@ export const SignUp = ({
               type="text"
               placeholder="Choose a preferred username"
             />
-            <Input
+            <PasswordInput
               label="Password"
-              type="text"
               placeholder="Choose a strong password"
             />
           </div>
