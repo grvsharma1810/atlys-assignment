@@ -1,6 +1,5 @@
 import { Ellipsis, MessageSquare } from "lucide-react";
 import { Button } from "../../components/Button";
-import { useNavigation } from "../../Providers/NavigationProvider";
 import profile1 from "/profile-1.png";
 import profile2 from "/profile-2.png";
 import { Modal } from "../../components/Modal";
