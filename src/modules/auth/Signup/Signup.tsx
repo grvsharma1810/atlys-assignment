@@ -1,11 +1,15 @@
 import { Button } from "../../../components/Button";
 import { Input } from "../../../components/Input";
 import { LinkButton } from "../../../components/LinkButton";
-import { Paths } from "../../constants";
 import { AuthWrapper } from "../AuthWrapper";
-import logo from "/logo.svg";
 
-export const SignUp = () => {
+export const SignUp = ({
+  onLogin,
+  onContinue,
+}: {
+  onLogin: () => void;
+  onContinue: () => void;
+}) => {
   return (
     <AuthWrapper>
       <div className="w-[463px] flex items-center justify-center rounded-lg bg-gradient-to-br from-atlysGray-4 to-atlysGray-5 p-0.5">
@@ -30,11 +34,13 @@ export const SignUp = () => {
             />
           </div>
           <div className="mt-5 w-full">
-            <Button fullWidth>Continue</Button>
+            <Button onClick={onContinue} fullWidth>
+              Continue
+            </Button>
           </div>
           <div className="flex gap-x-1 items-center mt-3">
             <p className="text-atlysGray-7 text-sm">Already have an account?</p>
-            <LinkButton href={Paths.LOGIN}>Login →</LinkButton>
+            <LinkButton onClick={onLogin}>Login →</LinkButton>
           </div>
         </div>
       </div>

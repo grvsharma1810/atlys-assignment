@@ -1,20 +1,12 @@
-import { useNavigation } from "../Providers/NavigationProvider";
-
 export const LinkButton = ({
   children,
-  href,
+  onClick,
 }: {
   children: React.ReactNode;
-  href: string;
+  onClick?: () => void;
 }) => {
-  const { navigate } = useNavigation();
-
-  const handleClick = () => {
-    navigate(href);
-  };
-
   return (
-    <button className="text-atlysGray-3 text-sm" onClick={handleClick}>
+    <button className="text-atlysGray-3 text-sm" onClick={onClick}>
       {children}
     </button>
   );

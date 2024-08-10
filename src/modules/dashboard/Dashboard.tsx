@@ -3,9 +3,24 @@ import { Button } from "../../components/Button";
 import { useNavigation } from "../../Providers/NavigationProvider";
 import profile1 from "/profile-1.png";
 import profile2 from "/profile-2.png";
+import { Modal } from "../../components/Modal";
+import { Login } from "../auth/Login/Login";
+import { SignUp } from "../auth/Signup/Signup";
+import { useState } from "react";
 
 export const Dashboard = () => {
-  const { navigate } = useNavigation();
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
+
+  const handleRegister = () => {
+    setIsLoginModalOpen(false);
+    setIsSignupModalOpen(true);
+  };
+
+  const handleLogin = () => {
+    setIsSignupModalOpen(false);
+    setIsLoginModalOpen(true);
+  };
 
   return (
     <div className="w-[700px] mx-auto py-[69px]">
@@ -15,7 +30,12 @@ export const Dashboard = () => {
         community 🤗
       </p>
 
-      <div className="rounded-lg border-2 border-atlysGray-6 px-5 py-6 bg-atlysGray-1 mt-10">
+      <div
+        onClick={() => {
+          setIsLoginModalOpen(true);
+        }}
+        className="rounded-lg border-2 border-atlysGray-6 px-5 py-6 bg-atlysGray-1 mt-10"
+      >
         <p className="text-atlysGray-3 font-medium text-lg">Create Post</p>
         <div className="rounded-lg flex mt-4 p-4 bg-atlysBlack-2 items-center">
           <div className="rounded-full flex justify-center items-center min-w-[48px] min-h-[48px] max-h-[48px] bg-atlysGray-1">
@@ -33,7 +53,10 @@ export const Dashboard = () => {
         </div>
       </div>
 
-      <div className="rounded-lg border-2 border-atlysGray-6 px-5 py-6 bg-atlysGray-1 mt-4">
+      <div
+        onClick={() => setIsLoginModalOpen(true)}
+        className="rounded-lg border-2 border-atlysGray-6 px-5 py-6 bg-atlysGray-1 mt-4"
+      >
         <div className="flex justify-between items-center">
           <div className="flex gap-x-4">
             <img
@@ -66,7 +89,10 @@ export const Dashboard = () => {
         </div>
       </div>
 
-      <div className="rounded-lg border-2 border-atlysGray-6 px-5 py-6 bg-atlysGray-1 mt-4">
+      <div
+        onClick={() => setIsLoginModalOpen(true)}
+        className="rounded-lg border-2 border-atlysGray-6 px-5 py-6 bg-atlysGray-1 mt-4"
+      >
         <div className="flex justify-between items-center">
           <div className="flex gap-x-4">
             <img
@@ -98,6 +124,26 @@ export const Dashboard = () => {
           <p className="ml-2 text-atlysGray-7 text-sm">24 Comments</p>
         </div>
       </div>
+
+      <Modal
+        isOpen={isLoginModalOpen}
+        handleClose={() => setIsLoginModalOpen(false)}
+      >
+        <Login
+          onRegister={handleRegister}
+          onLoginNow={() => setIsLoginModalOpen(false)}
+        />
+      </Modal>
+
+      <Modal
+        isOpen={isSignupModalOpen}
+        handleClose={() => setIsSignupModalOpen(false)}
+      >
+        <SignUp
+          onLogin={handleLogin}
+          onContinue={() => setIsSignupModalOpen(false)}
+        />
+      </Modal>
     </div>
   );
 };

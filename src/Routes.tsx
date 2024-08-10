@@ -1,6 +1,6 @@
 import { Route } from "./components/Route";
-import { Login } from "./modules/auth/Login/Login";
-import { SignUp } from "./modules/auth/Signup/Signup";
+import { AuthLogin } from "./modules/auth/Login/AuthLogin";
+import { AuthSignUp } from "./modules/auth/Signup/AuthSignup";
 import { Paths } from "./modules/constants";
 import { Dashboard } from "./modules/dashboard/Dashboard";
 
@@ -11,10 +11,10 @@ export const Routes = () => {
         <Dashboard />
       </Route>
       <Route path={Paths.LOGIN}>
-        <Login />
+        <AuthLogin />
       </Route>
       <Route path={Paths.SIGNUP}>
-        <SignUp />
+        <AuthSignUp />
       </Route>
     </main>
   );
