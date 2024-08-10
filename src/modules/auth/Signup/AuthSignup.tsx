@@ -8,7 +8,7 @@ export const AuthSignUp = () => {
   const { navigate } = useNavigation();
 
   const handleLogin = () => {
-    navigate(Paths.SIGNUP);
+    navigate(Paths.LOGIN);
   };
 
   const handleContinue = () => {
