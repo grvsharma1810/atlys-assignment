@@ -16,6 +16,9 @@ export const Routes = () => {
       <Route path={Paths.SIGNUP}>
         <AuthSignUp />
       </Route>
+      <Route path="/">
+        <AuthLogin />
+      </Route>
     </main>
   );
 };
