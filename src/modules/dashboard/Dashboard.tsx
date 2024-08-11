@@ -33,7 +33,7 @@ export const Dashboard = () => {
         onClick={() => {
           setIsLoginModalOpen(true);
         }}
-        className="rounded-lg border-2 border-atlysGray-6 px-5 py-6 bg-atlysGray-1 mt-10"
+        className="rounded-lg border-2 border-atlysGray-6 px-5 py-6 bg-atlysGray-1 mt-10 cursor-pointer"
       >
         <p className="text-atlysGray-3 font-medium text-lg">Create Post</p>
         <div className="rounded-lg flex mt-4 p-4 bg-atlysBlack-2 items-center">
@@ -54,7 +54,7 @@ export const Dashboard = () => {
 
       <div
         onClick={() => setIsLoginModalOpen(true)}
-        className="rounded-lg border-2 border-atlysGray-6 px-5 py-6 bg-atlysGray-1 mt-4"
+        className="rounded-lg border-2 border-atlysGray-6 px-5 py-6 bg-atlysGray-1 mt-4 cursor-pointer"
       >
         <div className="flex justify-between items-center">
           <div className="flex gap-x-4">
@@ -90,7 +90,7 @@ export const Dashboard = () => {
 
       <div
         onClick={() => setIsLoginModalOpen(true)}
-        className="rounded-lg border-2 border-atlysGray-6 px-5 py-6 bg-atlysGray-1 mt-4"
+        className="rounded-lg border-2 border-atlysGray-6 px-5 py-6 bg-atlysGray-1 mt-4 cursor-pointer"
       >
         <div className="flex justify-between items-center">
           <div className="flex gap-x-4">
