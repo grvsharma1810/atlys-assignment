@@ -31,12 +31,12 @@ export const Modal = ({
     };
   }, [isOpen]);
 
-  if (!isOpen) return null;
-
   return (
     <Portal wrapperId="react-portal-modal-container">
       <div
-        className={`h-[100vh] flex justify-center items-center backdrop-blur-sm overflow-hidden transition-opacity opacity-100`}
+        className={`h-[100vh] w-[100vw] fixed top-0 left-0 z-50  justify-center items-center backdrop-blur-sm overflow-hidden ${
+          isOpen ? "fade-in-image" : "fade-out-image"
+        } ${isOpen ? "flex" : "hidden"}`}
       >
         <div className="relative">
           <button

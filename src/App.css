@@ -1,8 +1,29 @@
-#react-portal-modal-container {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  z-index: 1000;
+.fade-in-image {
+  animation: fadeIn 0.25s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+  100% {
+    opacity: 1;
+    display: flex;
+  }
+}
+
+.fade-out-image {
+  animation: fadeOut 0.25s;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    display: flex;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
 }
